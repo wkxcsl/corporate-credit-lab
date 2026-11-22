@@ -15,7 +15,7 @@ st.set_page_config(page_title="企业财务与授信压力测试 | CreditLab", p
 st.markdown("""<style>
 .stApp {background: #f5f7fb;}
 [data-testid="stMetric"] {background:white; padding:18px; border-radius:12px; border:1px solid #e3e9f0;}
-.block-container {padding-top:2rem; max-width:1440px;}
+.block-container {padding-top:4rem; max-width:1440px;}
 h1,h2,h3 {color:#102b46;}
 </style>""", unsafe_allow_html=True)
 st.caption("CREDITLAB / CORPORATE FINANCE / v0.1.0")
@@ -111,7 +111,7 @@ with tab2:
     matrix = [[stress(s, replace(scenario, revenue_drop=d/100, dso_extra=t))["dscr_proxy"] for d in drops] for t in delays]
     if base["debt_service"] > 0:
         heat = go.Figure(go.Heatmap(z=matrix, x=[f"{x}%" for x in drops], y=[f"+{x}天" for x in delays], texttemplate="%{z:.2f}", colorscale=[[0,"#c44c56"],[0.5,"#f7f4ec"],[1,"#159a88"]], zmid=1, colorbar_title="覆盖倍数"))
-        heat.update_layout(height=310, xaxis_title="营业收入下降", yaxis_title="回款额外延长", margin=dict(l=20,r=20,t=20,b=20))
+        heat.update_layout(height=310, xaxis_title="营业收入下降（%）", yaxis_title="回款额外延长", margin=dict(l=20,r=20,t=20,b=20))
         st.plotly_chart(heat, width="stretch")
     else:
         st.info("到期本金及现金利息均为零，覆盖倍数无定义。")

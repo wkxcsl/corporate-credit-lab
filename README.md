@@ -8,6 +8,8 @@ Python 3.12 · Streamlit · Plotly · MIT · 纯Python计算内核
 
 ![工作台预览](docs/images/dashboard.jpg)
 
+![现金压力与敏感性分析](docs/images/stress.jpg)
+
 ## 解决什么问题
 
 一个企业收入增长、利润为正，仍可能因回款变慢、存货占用和债务集中到期面临现金压力。CreditLab把这些因素放进同一条可解释的现金桥接，让分析结果可以回到原始数据和假设，而不止是一串财务比率。
